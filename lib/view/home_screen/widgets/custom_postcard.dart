@@ -6,7 +6,7 @@ import 'package:instegram_clone/core/constants/color_constants.dart';
 class CustomPostCard extends StatefulWidget {
   const CustomPostCard({
     super.key,
-    required this.profilePic,
+    required this.proPic,
     required this.userName,
     required this.location,
     required this.posts,
@@ -14,7 +14,7 @@ class CustomPostCard extends StatefulWidget {
     this.caption,
   });
 
-  final String profilePic;
+  final String proPic;
   final String userName;
   final String location;
   final List<String> posts;
@@ -37,7 +37,7 @@ class _CustomPostCardState extends State<CustomPostCard> {
           ListTile(
             leading: CircleAvatar(
               radius: 16,
-              backgroundImage: NetworkImage(widget.profilePic),
+              backgroundImage: NetworkImage(widget.proPic),
             ),
             title: Row(
               children: [
@@ -139,7 +139,7 @@ class _CustomPostCardState extends State<CustomPostCard> {
                 Row(
                   children: [
                     CircleAvatar(
-                      backgroundImage: NetworkImage(widget.profilePic),
+                      backgroundImage: NetworkImage(widget.proPic),
                       radius: 10,
                     ),
                     SizedBox(width: 16),
@@ -157,7 +157,7 @@ class _CustomPostCardState extends State<CustomPostCard> {
                           ),
                           TextSpan(text: "and "),
                           TextSpan(
-                            text: "56,789 others ",
+                            text: "56,7 others ",
                             style: TextStyle(
                                 color: ColorConstants.primaryBlack,
                                 fontWeight: FontWeight.bold),
@@ -183,7 +183,7 @@ class _CustomPostCardState extends State<CustomPostCard> {
                         ])),
                 SizedBox(height: 13.5),
                 Text(
-                  "September 18",
+                  "January 2",
                   style: TextStyle(
                       color: ColorConstants.primaryBlack.withOpacity(.5),
                       fontSize: 11,

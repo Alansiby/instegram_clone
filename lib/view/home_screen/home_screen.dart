@@ -58,18 +58,17 @@ class HomeScreen extends StatelessWidget {
               height: 20,
             ),
             ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 itemCount: DummyDb.homePostsList.length,
                 itemBuilder: (context, index) => CustomPostCard(
                       userName:
                           DummyDb.homePostsList[index]["userName"].toString(),
-                      profilePic:
-                          DummyDb.homePostsList[index]["profilePic"].toString(),
+                      proPic: DummyDb.homePostsList[index]["proPic"].toString(),
                       location:
                           DummyDb.homePostsList[index]["location"].toString(),
                       posts: DummyDb.homePostsList[index]["posts"],
-                      isLike: DummyDb.homePostsList[index]["isLike"],
+                      isLike: DummyDb.homePostsList[index]["isLiked"],
                       caption:
                           DummyDb.homePostsList[index]["caption"].toString(),
                     ))
