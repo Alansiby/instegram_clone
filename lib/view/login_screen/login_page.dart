@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                   },
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 8,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
                 CustomButton(
                   buttonColour: nameController.text.isNotEmpty &&
@@ -112,6 +112,9 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.facebook),
+                      SizedBox(
+                        width: 15,
+                      ),
                       Text(
                         "Login With Facebook",
                         style: TextStyle(

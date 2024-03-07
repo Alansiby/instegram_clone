@@ -23,9 +23,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     Container(
       color: Colors.green,
     ),
-    Container(
-      color: Colors.indigo,
-    )
+    SelectAccScreen()
   ];
 
   int selectedIndex = 0;

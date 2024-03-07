@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:instegram_clone/core/constants/image_constants.dart';
 import 'package:instegram_clone/dummy_db.dart';
+import 'package:instegram_clone/view/home_screen/widgets/custom_postcard.dart';
 import 'package:instegram_clone/view/home_screen/widgets/story_avatar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -39,20 +40,41 @@ class HomeScreen extends StatelessWidget {
           )
         ],
       ),
-      body: Column(
-        children: [
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(
-                  DummyDb.storyList.length,
-                  (index) => StoryAvatar(
-                      profilePic: DummyDb.storyList[index]["profilePic"],
-                      userName: DummyDb.storyList[index]["userName"],
-                      isLive: DummyDb.storyList[index]["isLive"])),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(
+                    DummyDb.storyList.length,
+                    (index) => StoryAvatar(
+                        profilePic: DummyDb.storyList[index]["profilePic"],
+                        userName: DummyDb.storyList[index]["userName"],
+                        isLive: DummyDb.storyList[index]["isLive"])),
+              ),
             ),
-          )
-        ],
+            SizedBox(
+              height: 20,
+            ),
+            ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: DummyDb.homePostsList.length,
+                itemBuilder: (context, index) => CustomPostCard(
+                      userName:
+                          DummyDb.homePostsList[index]["userName"].toString(),
+                      profilePic:
+                          DummyDb.homePostsList[index]["profilePic"].toString(),
+                      location:
+                          DummyDb.homePostsList[index]["location"].toString(),
+                      posts: DummyDb.homePostsList[index]["posts"],
+                      isLike: DummyDb.homePostsList[index]["isLike"],
+                      caption:
+                          DummyDb.homePostsList[index]["caption"].toString(),
+                    ))
+          ],
+        ),
       ),
     );
   }

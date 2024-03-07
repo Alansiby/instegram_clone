@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 import 'package:instegram_clone/core/constants/color_constants.dart';
@@ -10,12 +10,14 @@ class CustomButton extends StatelessWidget {
       this.buttonColour = ColorConstants.primaryBlue,
       this.haveBorder = false,
       this.textColour = ColorConstants.primaryWhite,
-      this.onTap});
+      this.onTap
+      });
 
   final String text;
   final Color textColour;
   final Color buttonColour;
   final bool haveBorder;
+  
 
   final Function()? onTap;
 
