@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:instegram_clone/view/home_screen/home_screen.dart';
+import 'package:instegram_clone/view/search_screen/search_screen.dart';
 import 'package:instegram_clone/view/select_acc_screen/select_acc_screen.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
@@ -14,9 +15,7 @@ class BottomNavigationScreen extends StatefulWidget {
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   List<Widget> screenList = [
     HomeScreen(),
-    Container(
-      color: Colors.brown,
-    ),
+    SearchScreen(),
     Container(
       color: Colors.blue,
     ),
