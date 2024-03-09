@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:instegram_clone/view/create_post_screen/create_post_screen.dart';
 import 'package:instegram_clone/view/home_screen/home_screen.dart';
 import 'package:instegram_clone/view/search_screen/search_screen.dart';
 import 'package:instegram_clone/view/select_acc_screen/select_acc_screen.dart';
@@ -16,9 +17,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   List<Widget> screenList = [
     HomeScreen(),
     SearchScreen(),
-    Container(
-      color: Colors.blue,
-    ),
+    CreatePostScreen(),
     Container(
       color: Colors.green,
     ),

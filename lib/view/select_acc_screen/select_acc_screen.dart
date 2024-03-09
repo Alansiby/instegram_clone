@@ -2,12 +2,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:instegram_clone/core/constants/color_constants.dart';
+import 'package:instegram_clone/dummy_db.dart';
 import 'package:instegram_clone/global_widgets/custom_button.dart';
 import 'package:instegram_clone/view/select_acc_screen/select_acc_data/select_acc_data.dart';
 
-class SelectAccScreen extends StatelessWidget {
+class SelectAccScreen extends StatefulWidget {
   const SelectAccScreen({super.key});
 
+  @override
+  State<SelectAccScreen> createState() => _SelectAccScreenState();
+}
+
+class _SelectAccScreenState extends State<SelectAccScreen> {
+  var currentTagIndex = 0;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -60,7 +67,10 @@ class SelectAccScreen extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              SelectAccData(title: "Posts", value: "0"),
+                              SelectAccData(
+                                title: "Posts",
+                                value: "3",
+                              ),
                               SelectAccData(title: "Followers", value: "758"),
                               SelectAccData(title: "Following", value: "76"),
                             ],
@@ -200,6 +210,11 @@ class SelectAccScreen extends StatelessWidget {
                   unselectedLabelColor:
                       ColorConstants.primaryBlack.withOpacity(.3),
                   indicatorSize: TabBarIndicatorSize.tab,
+                  onTap: (index) {
+                    setState(() {
+                      currentTagIndex = index;
+                    });
+                  },
                   tabs: [
                     Tab(
                       icon: Icon(Icons.grid_on_sharp),
@@ -208,19 +223,51 @@ class SelectAccScreen extends StatelessWidget {
                       icon: Icon(Icons.person_pin_rounded),
                     )
                   ]),
-              Container(
-                height: 400,
-                child: TabBarView(children: [
-                  Container(
-                    height: 200,
-                    width: 200,
-                  ),
-                  Container(
-                    height: 200,
-                    width: 200,
-                  )
-                ]),
-              )
+              // Container(
+              //   height: 400,
+              //   child: TabBarView(children: [
+              //     Container(
+              //       height: 200,
+              //       width: 200,
+              //     ),
+              //     Container(
+              //       height: 200,
+              //       width: 200,
+              //     )
+              //   ]),
+              // )
+              currentTagIndex == 0
+                  ? GridView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: DummyDb.postList.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          mainAxisSpacing: 2,
+                          crossAxisSpacing: 2,
+                          crossAxisCount: 3),
+                      itemBuilder: (context, index) => Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage(DummyDb.postList[index]))),
+                      ),
+                    )
+                  : GridView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: DummyDb.postList.length,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          mainAxisSpacing: 2,
+                          crossAxisSpacing: 2,
+                          crossAxisCount: 3),
+                      itemBuilder: (context, index) => Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image:
+                                    NetworkImage(DummyDb.tagpostList[index]))),
+                      ),
+                    )
             ],
           ),
         ),

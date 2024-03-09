@@ -116,4 +116,16 @@ class DummyDb {
           "um is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the "
     },
   ];
+
+  static const List<String> postList = [
+    "https://images.pexels.com/photos/18424481/pexels-photo-18424481/free-photo-of-a-man-fishing-from-the-pier.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load",
+    "https://images.pexels.com/photos/20299478/pexels-photo-20299478/free-photo-of-serenity.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load",
+    "https://images.pexels.com/photos/20401081/pexels-photo-20401081/free-photo-of-harmony-of-the-blue-sea.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load",
+  ];
+
+  static const List<String> tagpostList = [
+    "https://images.pexels.com/photos/20401081/pexels-photo-20401081/free-photo-of-harmony-of-the-blue-sea.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load",
+    "https://images.pexels.com/photos/20376087/pexels-photo-20376087/free-photo-of-calming-blue-trim.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load",
+    "https://images.pexels.com/photos/20506505/pexels-photo-20506505/free-photo-of-a-man-in-a-white-shirt-and-black-pants-standing-in-front-of-a-building.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+  ];
 }
