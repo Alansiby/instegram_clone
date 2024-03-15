@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:instegram_clone/view/create_post_screen/create_post_screen.dart';
 import 'package:instegram_clone/view/home_screen/home_screen.dart';
+import 'package:instegram_clone/view/notification_screen/notification_screen.dart';
 import 'package:instegram_clone/view/search_screen/search_screen.dart';
 import 'package:instegram_clone/view/select_acc_screen/select_acc_screen.dart';
 
@@ -18,9 +19,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     HomeScreen(),
     SearchScreen(),
     CreatePostScreen(),
-    Container(
-      color: Colors.green,
-    ),
+    NotificationScreen(),
     SelectAccScreen()
   ];
 
@@ -32,7 +31,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       body: screenList[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {
-          if (value != 4) {
+          if (value != 5) {
             selectedIndex = value;
             setState(() {});
           } else {

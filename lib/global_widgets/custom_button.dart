@@ -4,20 +4,23 @@ import 'package:flutter/material.dart';
 import 'package:instegram_clone/core/constants/color_constants.dart';
 
 class CustomButton extends StatelessWidget {
-  CustomButton(
-      {super.key,
-      required this.text,
-      this.buttonColour = ColorConstants.primaryBlue,
-      this.haveBorder = false,
-      this.textColour = ColorConstants.primaryWhite,
-      this.onTap
-      });
+  CustomButton({
+    super.key,
+    required this.text,
+    this.buttonColour = ColorConstants.primaryBlue,
+    this.haveBorder = false,
+    this.textColour = ColorConstants.primaryWhite,
+    this.onTap,
+    this.verticalPadding = 15,
+    this.hirizontalPadding = 0,
+  });
 
   final String text;
   final Color textColour;
   final Color buttonColour;
   final bool haveBorder;
-  
+  final double verticalPadding;
+  final double hirizontalPadding;
 
   final Function()? onTap;
 
@@ -26,7 +29,8 @@ class CustomButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 15),
+        padding: EdgeInsets.symmetric(
+            vertical: verticalPadding, horizontal: hirizontalPadding),
         decoration: BoxDecoration(
             color: buttonColour,
             borderRadius: BorderRadius.circular(5),
